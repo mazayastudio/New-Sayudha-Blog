@@ -293,145 +293,229 @@ $('.tgslider__active').slick({
 
 
 /*===========================================
-	=        Instagram Active        =
+    =        Swiper Init Helper      =
 =============================================*/
-var instagramSwiper = new Swiper('.instagram-active', {
-    // Optional parameters
-    loop: false,
-    slidesPerView: 6,
-    spaceBetween: 0,
-    autoplay: {
-        delay: 3500,
-        disableOnInteraction: true,
-    },
-    breakpoints: {
-        '1500': {
-            slidesPerView: 6,
-        },
-        '1200': {
-            slidesPerView: 5,
-        },
-        '992': {
-            slidesPerView: 4,
-        },
-        '768': {
-            slidesPerView: 4,
-        },
-        '576': {
-            slidesPerView: 3,
-        },
-        '0': {
-            slidesPerView: 3,
-        },
-    },
-});
+function initSwiperInstance(selector, options) {
+    var element = document.querySelector(selector);
+    if (!element) {
+        return null;
+    }
+    if (element.swiper) {
+        element.swiper.destroy(true, true);
+    }
+    return new Swiper(selector, options);
+}
 
+window.TG_INIT_SWIPERS = function () {
+    /*===========================================
+        =        Instagram Active        =
+    =============================================*/
+    initSwiperInstance('.instagram-active', {
+        // Optional parameters
+        loop: false,
+        slidesPerView: 6,
+        spaceBetween: 0,
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: true,
+        },
+        breakpoints: {
+            '1500': {
+                slidesPerView: 6,
+            },
+            '1200': {
+                slidesPerView: 5,
+            },
+            '992': {
+                slidesPerView: 4,
+            },
+            '768': {
+                slidesPerView: 4,
+            },
+            '576': {
+                slidesPerView: 3,
+            },
+            '0': {
+                slidesPerView: 3,
+            },
+        },
+    });
 
-/*===========================================
-	=        Trending Active        =
-=============================================*/
-var trendSwiper = new Swiper('.trending-active', {
-    // Optional parameters
-    loop: true,
-    slidesPerView: 4,
-    spaceBetween: 30,
-    autoplay: {
-        delay: 3500,
-        disableOnInteraction: true,
-    },
-    breakpoints: {
-        '1500': {
-            slidesPerView: 4,
+    /*===========================================
+        =        Trending Active        =
+    =============================================*/
+    initSwiperInstance('.trending-active', {
+        // Optional parameters
+        loop: true,
+        slidesPerView: 4,
+        spaceBetween: 30,
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: true,
         },
-        '1200': {
-            slidesPerView: 4,
+        breakpoints: {
+            '1500': {
+                slidesPerView: 4,
+            },
+            '1200': {
+                slidesPerView: 4,
+            },
+            '992': {
+                slidesPerView: 3,
+            },
+            '768': {
+                slidesPerView: 2,
+            },
+            '576': {
+                slidesPerView: 1,
+            },
+            '0': {
+                slidesPerView: 1,
+            },
         },
-        '992': {
-            slidesPerView: 3,
-        },
-        '768': {
-            slidesPerView: 2,
-        },
-        '576': {
-            slidesPerView: 1,
-        },
-        '0': {
-            slidesPerView: 1,
-        },
-    },
-});
+    });
 
+    /*===========================================
+        =         Popular Active        =
+    =============================================*/
+    initSwiperInstance('.popular-active', {
+        // Optional parameters
+        loop: true,
+        slidesPerView: 3,
+        spaceBetween: 30,
+        breakpoints: {
+            '1500': {
+                slidesPerView: 3,
+            },
+            '1200': {
+                slidesPerView: 3,
+            },
+            '992': {
+                slidesPerView: 2,
+            },
+            '768': {
+                slidesPerView: 2,
+            },
+            '576': {
+                slidesPerView: 1,
+            },
+            '0': {
+                slidesPerView: 1,
+            },
+        },
+    });
 
-/*===========================================
-	=         Popular Active        =
-=============================================*/
-var popularSwiper = new Swiper('.popular-active', {
-    // Optional parameters
-    loop: true,
-    slidesPerView: 3,
-    spaceBetween: 30,
+    /*===========================================
+        =          HandPicked Active       =
+    =============================================*/
+    initSwiperInstance('.handpicked-active', {
+        // Optional parameters
+        loop: true,
+        slidesPerView: 6,
+        spaceBetween: 50,
+        centerMode: true,
+        breakpoints: {
+            '1700': {
+                slidesPerView: 6,
+            },
+            '1600': {
+                slidesPerView: 5,
+            },
+            '1200': {
+                slidesPerView: 5,
+                spaceBetween: 30,
+            },
+            '992': {
+                slidesPerView: 4,
+                spaceBetween: 30,
+            },
+            '768': {
+                slidesPerView: 2,
+                spaceBetween: 30,
+            },
+            '576': {
+                slidesPerView: 1,
+                spaceBetween: 30,
+            },
+            '0': {
+                slidesPerView: 1,
+                spaceBetween: 30,
+            },
+        },
+    });
 
-    breakpoints: {
-        '1500': {
-            slidesPerView: 3,
+    /*===========================================
+        =       sideInstagram Active         =
+    =============================================*/
+    initSwiperInstance('.sidebarInsta-active', {
+        // Optional parameters
+        loop: true,
+        slidesPerView: 4,
+        spaceBetween: 15,
+        centerMode: true,
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: true,
         },
-        '1200': {
-            slidesPerView: 3,
+        breakpoints: {
+            '1400': {
+                slidesPerView: 4,
+            },
+            '1200': {
+                slidesPerView: 4,
+            },
+            '992': {
+                slidesPerView: 4,
+            },
+            '768': {
+                slidesPerView: 4,
+            },
+            '576': {
+                slidesPerView: 4,
+            },
+            '0': {
+                slidesPerView: 4,
+            },
         },
-        '992': {
-            slidesPerView: 2,
-        },
-        '768': {
-            slidesPerView: 2,
-        },
-        '576': {
-            slidesPerView: 1,
-        },
-        '0': {
-            slidesPerView: 1,
-        },
-    },
-});
+    });
 
+    /*===========================================
+        =       sideInstagram Active         =
+    =============================================*/
+    initSwiperInstance('.sidebarInsta-active-2', {
+        // Optional parameters
+        loop: true,
+        slidesPerView: 4,
+        spaceBetween: 15,
+        centerMode: true,
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: true,
+        },
+        breakpoints: {
+            '1400': {
+                slidesPerView: 4,
+            },
+            '1200': {
+                slidesPerView: 4,
+            },
+            '992': {
+                slidesPerView: 4,
+            },
+            '768': {
+                slidesPerView: 4,
+            },
+            '576': {
+                slidesPerView: 4,
+            },
+            '0': {
+                slidesPerView: 4,
+            },
+        },
+    });
+};
 
-/*===========================================
-	=          HandPicked Active       =
-=============================================*/
-var handSwiper = new Swiper('.handpicked-active', {
-    // Optional parameters
-    loop: true,
-    slidesPerView: 6,
-    spaceBetween: 50,
-    centerMode: true,
-    breakpoints: {
-        '1700': {
-            slidesPerView: 6,
-        },
-        '1600': {
-            slidesPerView: 5,
-        },
-        '1200': {
-            slidesPerView: 5,
-            spaceBetween: 30,
-        },
-        '992': {
-            slidesPerView: 4,
-            spaceBetween: 30,
-        },
-        '768': {
-            slidesPerView: 2,
-            spaceBetween: 30,
-        },
-        '576': {
-            slidesPerView: 1,
-            spaceBetween: 30,
-        },
-        '0': {
-            slidesPerView: 1,
-            spaceBetween: 30,
-        },
-    },
-});
+window.TG_INIT_SWIPERS();
 
 /*===========================================
 	=         sidePost Active         =
@@ -444,77 +528,6 @@ $('.sidePost-active').slick({
 	arrows: false,
 	slidesToShow: 1,
 	slidesToScroll: 1,
-});
-
-/*===========================================
-	=       sideInstagram Active         =
-=============================================*/
-var sideInstaSwiper = new Swiper('.sidebarInsta-active', {
-    // Optional parameters
-    loop: true,
-    slidesPerView: 4,
-    spaceBetween: 15,
-    centerMode: true,
-    autoplay: {
-        delay: 3500,
-        disableOnInteraction: true,
-    },
-    breakpoints: {
-        '1400': {
-            slidesPerView: 4,
-        },
-        '1200': {
-            slidesPerView: 4,
-        },
-        '992': {
-            slidesPerView: 4,
-        },
-        '768': {
-            slidesPerView: 4,
-        },
-        '576': {
-            slidesPerView: 4,
-        },
-        '0': {
-            slidesPerView: 4,
-        },
-    },
-});
-
-
-/*===========================================
-	=       sideInstagram Active         =
-=============================================*/
-var sideInsta2Swiper = new Swiper('.sidebarInsta-active-2', {
-    // Optional parameters
-    loop: true,
-    slidesPerView: 4,
-    spaceBetween: 15,
-    centerMode: true,
-    autoplay: {
-        delay: 3500,
-        disableOnInteraction: true,
-    },
-    breakpoints: {
-        '1400': {
-            slidesPerView: 4,
-        },
-        '1200': {
-            slidesPerView: 4,
-        },
-        '992': {
-            slidesPerView: 4,
-        },
-        '768': {
-            slidesPerView: 4,
-        },
-        '576': {
-            slidesPerView: 4,
-        },
-        '0': {
-            slidesPerView: 4,
-        },
-    },
 });
 
 

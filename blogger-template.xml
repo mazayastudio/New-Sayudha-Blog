@@ -166,154 +166,179 @@ Description: Blogger conversion of the Sayudha HTML template.
         </header>
 
         <main>
-            <div class="breadcrumb-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="breadcrumb-content">
-                                <nav aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a expr:href="data:blog.homepageUrl">Home</a></li>
-                                        <b:if cond="data:blog.pageType == &quot;item&quot;">
-                                            <li class="breadcrumb-item active" aria-current="page"><data:blog.pageTitle /></li>
-                                        <b:else />
-                                            <li class="breadcrumb-item active" aria-current="page"><data:blog.pageTitle /></li>
-                                        </b:if>
-                                    </ol>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <section class="blog-details-area pt-80 pb-100">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-1">
-                            <div class="blog-details-social">
-                                <ul class="list-wrap">
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-behance"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-share"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-8 col-lg-7">
-                            <div class="blog-post-wrapper">
-                                <b:section id="main" class="blog-post-wrapper" showaddelement="no" maxwidgets="1">
-                                    <b:widget id="Blog1" type="Blog" locked="true" title="Posts">
-                                        <b:includable id="main">
+            <b:if cond='not data:view.isHomepage'>
+                <div class="breadcrumb-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="breadcrumb-content">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a expr:href="data:blog.homepageUrl">Home</a></li>
                                             <b:if cond="data:blog.pageType == &quot;item&quot;">
-                                                <b:loop var="post" in="data:posts">
-                                                    <div class="blog-details-wrap">
-                                                        <ul class="tgbanner__content-meta list-wrap">
-                                                            <b:if cond="data:post.labels">
-                                                                <b:loop var="label" in="data:post.labels">
-                                                                    <li class="category"><a expr:href="data:label.url"><data:label.name /></a></li>
-                                                                </b:loop>
-                                                            </b:if>
-                                                            <li><span class="by">By</span> <a expr:href="data:post.authorProfileUrl"><data:post.author /></a></li>
-                                                            <li><data:post.date /></li>
-                                                            <li><data:post.numComments /> comments</li>
-                                                        </ul>
-                                                        <h2 class="title"><data:post.title /></h2>
-                                                        <div class="blog-details-thumb">
-                                                            <b:if cond="data:post.thumbnailUrl">
-                                                                <img expr:src="data:post.thumbnailUrl" alt="" />
-                                                            <b:else />
-                                                                <img expr:src="data:assetBase + &quot;/img/blog/blog01.jpg&quot;" alt="" />
-                                                            </b:if>
-                                                        </div>
-                                                        <div class="blog-details-content">
-                                                            <data:post.body />
-                                                        </div>
-                                                        <div class="blog-details-bottom">
-                                                            <div class="row align-items-baseline">
-                                                                <div class="col-xl-6 col-md-7">
-                                                                    <div class="blog-details-tags">
-                                                                        <ul class="list-wrap mb-0">
-                                                                            <b:if cond="data:post.labels">
-                                                                                <b:loop var="label" in="data:post.labels">
-                                                                                    <li><a expr:href="data:label.url"><data:label.name /></a></li>
-                                                                                </b:loop>
-                                                                            </b:if>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-xl-6 col-md-5">
-                                                                    <div class="blog-details-share">
-                                                                        <h6 class="share-title">Share Now:</h6>
-                                                                        <ul class="list-wrap mb-0">
-                                                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                                                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                                                            <li><a href="#"><i class="fab fa-behance"></i></a></li>
-                                                                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <b:include data="post" name="comments" />
-                                                    </div>
-                                                </b:loop>
+                                                <li class="breadcrumb-item active" aria-current="page"><data:blog.pageTitle /></li>
                                             <b:else />
-                                                <b:loop var="post" in="data:posts">
-                                                    <div class="latest__post-item">
-                                                        <div class="latest__post-thumb tgImage__hover">
-                                                            <a expr:href="data:post.url">
-                                                                <b:if cond="data:post.thumbnailUrl">
-                                                                    <img expr:src="data:post.thumbnailUrl" alt="img" />
-                                                                <b:else />
-                                                                    <img expr:src="data:assetBase + &quot;/img/lifestyle/life_style01.jpg&quot;" alt="img" />
-                                                                </b:if>
-                                                            </a>
-                                                        </div>
-                                                        <div class="latest__post-content">
-                                                            <ul class="tgbanner__content-meta list-wrap">
-                                                                <b:if cond="data:post.labels">
-                                                                    <b:loop var="label" in="data:post.labels">
-                                                                        <li class="category"><a expr:href="data:label.url"><data:label.name /></a></li>
-                                                                    </b:loop>
-                                                                </b:if>
-                                                                <li><span class="by">By</span> <a expr:href="data:post.authorProfileUrl"><data:post.author /></a></li>
-                                                                <li><data:post.date /></li>
-                                                            </ul>
-                                                            <h3 class="title tgcommon__hover"><a expr:href="data:post.url"><data:post.title /></a></h3>
-                                                            <p><data:post.snippet /></p>
-                                                            <div class="latest__post-read-more">
-                                                                <a expr:href="data:post.url">Read More <i class="far fa-long-arrow-right"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </b:loop>
-                                                <div class="pagination__wrap">
-                                                    <ul class="list-wrap">
-                                                        <b:if cond="data:newerPageUrl">
-                                                            <li><a expr:href="data:newerPageUrl"><i class="fas fa-angle-double-left"></i></a></li>
-                                                        </b:if>
-                                                        <b:if cond="data:olderPageUrl">
-                                                            <li><a expr:href="data:olderPageUrl"><i class="fas fa-angle-double-right"></i></a></li>
-                                                        </b:if>
-                                                    </ul>
-                                                </div>
+                                                <li class="breadcrumb-item active" aria-current="page"><data:blog.pageTitle /></li>
                                             </b:if>
-                                        </b:includable>
-                                    </b:widget>
-                                </b:section>
+                                        </ol>
+                                    </nav>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <aside class="blog-sidebar">
-                                <b:section id="sidebar" class="blog-sidebar" showaddelement="yes" />
-                            </aside>
                         </div>
                     </div>
                 </div>
-            </section>
+            </b:if>
+
+            <b:if cond='data:view.isHomepage'>
+                <div id="tg-home-root">
+                    <section class="tgbanner__area">
+                        <div class="container">
+                            <div class="tgbanner__grid">
+                                <div class="tgbanner__post big-post" id="tg-banner-main"></div>
+                                <div class="tgbanner__side-post" id="tg-banner-side"></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="trending-post-area section__hover-line pt-25">
+                        <div class="container">
+                            <div class="section__title-wrap mb-40">
+                                <div class="row align-items-end">
+                                    <div class="col-sm-6">
+                                        <div class="section__title">
+                                            <span class="section__sub-title">Popular Posts</span>
+                                            <h3 class="section__main-title">Trending News</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trending__slider">
+                                <div class="swiper-container trending-active">
+                                    <div class="swiper-wrapper" id="tg-trending-wrapper"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="featured-post-area section__hover-line pt-75">
+                        <div class="container">
+                            <div class="section__title-wrap mb-40">
+                                <div class="row align-items-end">
+                                    <div class="col-sm-6">
+                                        <div class="section__title">
+                                            <span class="section__sub-title">Featured</span>
+                                            <h3 class="section__main-title">Editor Choice</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" id="tg-featured-grid"></div>
+                        </div>
+                    </section>
+
+                    <div class="advertisement pt-45 pb-80">
+                        <div class="container">
+                            <div class="col-12">
+                                <div class="advertisement__image text-center">
+                                    <a href="#"><img expr:src="data:assetBase + &quot;/img/others/advertisement.png&quot;" alt="advertisement" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <section class="video-post-area section__hover-line white-bg pt-75 pb-80">
+                        <div class="container">
+                            <div class="section__title-wrap mb-40">
+                                <div class="row align-items-end">
+                                    <div class="col-sm-6">
+                                        <div class="section__title">
+                                            <span class="section__sub-title">Video</span>
+                                            <h3 class="section__main-title">Recent Video Post</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-8 col-lg-7" id="tg-video-big"></div>
+                                <div class="col-xl-4 col-lg-5" id="tg-video-side"></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="hand-picked-area black-bg fix section__hover-line pt-75 pb-80">
+                        <div class="container">
+                            <div class="section__title-wrap section__title-white mb-40">
+                                <div class="row align-items-end">
+                                    <div class="col-sm-6">
+                                        <div class="section__title">
+                                            <span class="section__sub-title">hand-picked</span>
+                                            <h3 class="section__main-title">More to Watch</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trending__slider dark-post-slider">
+                            <div class="swiper-container handpicked-active">
+                                <div class="swiper-wrapper" id="tg-handpicked-wrapper"></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="stories-post-area section__hover-line pt-75 pb-40">
+                        <div class="container">
+                            <div class="section__title-wrap mb-40">
+                                <div class="row align-items-end">
+                                    <div class="col-sm-6">
+                                        <div class="section__title">
+                                            <span class="section__sub-title">Stories</span>
+                                            <h3 class="section__main-title">Popular Stories</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-gutters-40" id="tg-stories-top"></div>
+                            <div class="row" id="tg-stories-small"></div>
+                        </div>
+                    </section>
+                </div>
+            </b:if>
+
+            <b:if cond='not data:view.isHomepage'>
+                <section class="blog-details-area pt-80 pb-100">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-1">
+                                <div class="blog-details-social">
+                                    <ul class="list-wrap">
+                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                                        <li><a href="#"><i class="fas fa-share"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-8 col-lg-7">
+                                <div class="blog-post-wrapper">
+                                    <b:section id="main" class="blog-post-wrapper" showaddelement="no" maxwidgets="1">
+                                        <b:widget id="Blog1" type="Blog" locked="true" title="Posts">
+                                            <b:includable id="main">
+                                                <b:include name="super.main" />
+                                            </b:includable>
+                                        </b:widget>
+                                    </b:section>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6">
+                                <aside class="blog-sidebar">
+                                    <b:section id="sidebar" class="blog-sidebar" showaddelement="yes" />
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </b:if>
 
             <section id="newsletter" class="newsletter-area pb-80">
                 <div class="container">
@@ -399,6 +424,304 @@ Description: Blogger conversion of the Sayudha HTML template.
         <script expr:src="data:assetBase + &quot;/js/slick.min.js&quot;"></script>
         <script expr:src="data:assetBase + &quot;/js/wow.min.js&quot;"></script>
         <script expr:src="data:assetBase + &quot;/js/main.js&quot;"></script>
+        <script>
+            (function () {
+                var homeRoot = document.getElementById('tg-home-root');
+                if (!homeRoot) {
+                    return;
+                }
+
+                var assetBase = "<data:assetBase/>";
+                var homeUrl = "<data:blog.homepageUrl/>";
+                var feedUrl = (homeUrl.charAt(homeUrl.length - 1) === '/' ? homeUrl : homeUrl + '/') + 'feeds/posts/default?alt=json&max-results=36';
+
+                function escapeHtml(text) {
+                    return String(text || '')
+                        .replace(/&/g, '&amp;')
+                        .replace(/</g, '&lt;')
+                        .replace(/>/g, '&gt;')
+                        .replace(/"/g, '&quot;')
+                        .replace(/'/g, '&#39;');
+                }
+
+                function stripHtml(html) {
+                    return String(html || '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+                }
+
+                function truncate(text, maxLen) {
+                    var clean = String(text || '');
+                    if (clean.length <= maxLen) {
+                        return clean;
+                    }
+                    return clean.slice(0, maxLen).trim() + '...';
+                }
+
+                function formatDate(dateStr) {
+                    if (!dateStr) {
+                        return '';
+                    }
+                    var date = new Date(dateStr);
+                    if (Number.isNaN(date.getTime())) {
+                        return '';
+                    }
+                    return date.toLocaleDateString('id-ID', {
+                        day: '2-digit',
+                        month: 'short',
+                        year: 'numeric'
+                    });
+                }
+
+                function getLink(entry) {
+                    if (!entry || !entry.link) {
+                        return '#';
+                    }
+                    for (var i = 0; i < entry.link.length; i += 1) {
+                        if (entry.link[i].rel === 'alternate') {
+                            return entry.link[i].href;
+                        }
+                    }
+                    return '#';
+                }
+
+                function getThumb(entry) {
+                    var thumb = entry && entry.media$thumbnail ? entry.media$thumbnail.url : '';
+                    if (!thumb) {
+                        var html = (entry && entry.content && entry.content.$t) || '';
+                        var match = html.match(/<img[^>]+src="([^"]+)"/i);
+                        thumb = match ? match[1] : '';
+                    }
+                    if (!thumb) {
+                        return assetBase + '/img/blog/blog01.jpg';
+                    }
+                    return thumb.replace(/\/s72-c\//, '/w820-h440-p/');
+                }
+
+                function mapEntry(entry) {
+                    var title = entry && entry.title ? entry.title.$t : '';
+                    var author = (entry && entry.author && entry.author.length) ? entry.author[0].name.$t : '';
+                    var labels = entry && entry.category ? entry.category.map(function (c) { return c.term; }) : [];
+                    var content = entry && entry.content ? entry.content.$t : (entry.summary ? entry.summary.$t : '');
+                    var snippet = truncate(stripHtml(content), 140);
+                    return {
+                        title: title,
+                        author: author,
+                        labels: labels,
+                        url: getLink(entry),
+                        thumb: getThumb(entry),
+                        date: formatDate(entry && entry.published ? entry.published.$t : ''),
+                        snippet: snippet
+                    };
+                }
+
+                function labelOrDefault(labels) {
+                    return labels && labels.length ? labels[0] : 'news';
+                }
+
+                function renderBannerMain(post) {
+                    return '' +
+                        '<div class="tgbanner__thumb tgImage__hover">' +
+                        '<a href="' + escapeHtml(post.url) + '"><img src="' + escapeHtml(post.thumb) + '" alt="img"></a>' +
+                        '</div>' +
+                        '<div class="tgbanner__content">' +
+                        '<ul class="tgbanner__content-meta list-wrap">' +
+                        '<li class="category"><a href="' + escapeHtml(post.url) + '">' + escapeHtml(labelOrDefault(post.labels)) + '</a></li>' +
+                        '<li><span class="by">By</span> <a href="' + escapeHtml(post.url) + '">' + escapeHtml(post.author) + '</a></li>' +
+                        '<li>' + escapeHtml(post.date) + '</li>' +
+                        '</ul>' +
+                        '<h2 class="title tgcommon__hover"><a href="' + escapeHtml(post.url) + '">' + escapeHtml(post.title) + '</a></h2>' +
+                        '</div>';
+                }
+
+                function renderBannerSide(post) {
+                    return '' +
+                        '<div class="tgbanner__post small-post">' +
+                        '<div class="tgbanner__thumb tgImage__hover">' +
+                        '<a href="' + escapeHtml(post.url) + '"><img src="' + escapeHtml(post.thumb) + '" alt="img"></a>' +
+                        '</div>' +
+                        '<div class="tgbanner__content">' +
+                        '<ul class="tgbanner__content-meta list-wrap">' +
+                        '<li class="category"><a href="' + escapeHtml(post.url) + '">' + escapeHtml(labelOrDefault(post.labels)) + '</a></li>' +
+                        '</ul>' +
+                        '<h2 class="title tgcommon__hover"><a href="' + escapeHtml(post.url) + '">' + escapeHtml(post.title) + '</a></h2>' +
+                        '</div>' +
+                        '</div>';
+                }
+
+                function renderTrending(post) {
+                    return '' +
+                        '<div class="swiper-slide">' +
+                        '<div class="trending__post">' +
+                        '<div class="trending__post-thumb tgImage__hover">' +
+                        '<a href="' + escapeHtml(post.url) + '"><img src="' + escapeHtml(post.thumb) + '" alt="img"></a>' +
+                        '</div>' +
+                        '<div class="trending__post-content">' +
+                        '<ul class="tgbanner__content-meta list-wrap">' +
+                        '<li class="category"><a href="' + escapeHtml(post.url) + '">' + escapeHtml(labelOrDefault(post.labels)) + '</a></li>' +
+                        '<li><span class="by">By</span> <a href="' + escapeHtml(post.url) + '">' + escapeHtml(post.author) + '</a></li>' +
+                        '</ul>' +
+                        '<h4 class="title tgcommon__hover"><a href="' + escapeHtml(post.url) + '">' + escapeHtml(post.title) + '</a></h4>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>';
+                }
+
+                function renderFeatured(post, index) {
+                    return '' +
+                        '<div class="col-lg-4 col-sm-6">' +
+                        '<div class="featured__post">' +
+                        '<div class="featured__thumb" style="background-image:url(' + escapeHtml(post.thumb) + ')">' + (index + 1) + '</div>' +
+                        '<div class="featured__content">' +
+                        '<ul class="tgbanner__content-meta list-wrap">' +
+                        '<li class="category"><a href="' + escapeHtml(post.url) + '">' + escapeHtml(labelOrDefault(post.labels)) + '</a></li>' +
+                        '<li><span class="by">By</span> <a href="' + escapeHtml(post.url) + '">' + escapeHtml(post.author) + '</a></li>' +
+                        '</ul>' +
+                        '<h4 class="title tgcommon__hover"><a href="' + escapeHtml(post.url) + '">' + escapeHtml(post.title) + '</a></h4>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>';
+                }
+
+                function renderVideoBig(post) {
+                    return '' +
+                        '<div class="video__post-item big-post">' +
+                        '<div class="video__post-thumb">' +
+                        '<a href="' + escapeHtml(post.url) + '"><img src="' + escapeHtml(post.thumb) + '" alt="img"></a>' +
+                        '<a href="' + escapeHtml(post.url) + '" class="popup-video"><i class="fas fa-play"></i></a>' +
+                        '</div>' +
+                        '<div class="video__post-content">' +
+                        '<ul class="tgbanner__content-meta list-wrap">' +
+                        '<li class="category"><a href="' + escapeHtml(post.url) + '">' + escapeHtml(labelOrDefault(post.labels)) + '</a></li>' +
+                        '<li><span class="by">By</span> <a href="' + escapeHtml(post.url) + '">' + escapeHtml(post.author) + '</a></li>' +
+                        '<li>' + escapeHtml(post.date) + '</li>' +
+                        '</ul>' +
+                        '<h3 class="title tgcommon__hover"><a href="' + escapeHtml(post.url) + '">' + escapeHtml(post.title) + '</a></h3>' +
+                        '</div>' +
+                        '</div>';
+                }
+
+                function renderVideoSide(post) {
+                    return '' +
+                        '<div class="video__post-item side-post">' +
+                        '<div class="video__post-thumb tgImage__hover">' +
+                        '<a href="' + escapeHtml(post.url) + '" class="popup-video"><img src="' + escapeHtml(post.thumb) + '" alt="img"><i class="fas fa-play"></i></a>' +
+                        '</div>' +
+                        '<div class="video__post-content">' +
+                        '<ul class="tgbanner__content-meta list-wrap">' +
+                        '<li class="category"><a href="' + escapeHtml(post.url) + '">' + escapeHtml(labelOrDefault(post.labels)) + '</a></li>' +
+                        '<li><span class="by">By</span> <a href="' + escapeHtml(post.url) + '">' + escapeHtml(post.author) + '</a></li>' +
+                        '</ul>' +
+                        '<h3 class="title tgcommon__hover"><a href="' + escapeHtml(post.url) + '">' + escapeHtml(post.title) + '</a></h3>' +
+                        '</div>' +
+                        '</div>';
+                }
+
+                function renderHandpicked(post) {
+                    return '' +
+                        '<div class="swiper-slide">' +
+                        '<div class="trending__post">' +
+                        '<div class="trending__post-thumb tgImage__hover">' +
+                        '<a href="' + escapeHtml(post.url) + '"><img src="' + escapeHtml(post.thumb) + '" alt="img"></a>' +
+                        '</div>' +
+                        '<div class="trending__post-content">' +
+                        '<ul class="tgbanner__content-meta list-wrap">' +
+                        '<li class="category"><a href="' + escapeHtml(post.url) + '">' + escapeHtml(labelOrDefault(post.labels)) + '</a></li>' +
+                        '<li><span class="by">By</span> <a href="' + escapeHtml(post.url) + '">' + escapeHtml(post.author) + '</a></li>' +
+                        '</ul>' +
+                        '<h4 class="title tgcommon__hover"><a href="' + escapeHtml(post.url) + '">' + escapeHtml(post.title) + '</a></h4>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>';
+                }
+
+                function renderStoriesTop(post) {
+                    return '' +
+                        '<div class="col-md-6">' +
+                        '<div class="stories-post__item">' +
+                        '<div class="stories-post__thumb tgImage__hover">' +
+                        '<a href="' + escapeHtml(post.url) + '"><img src="' + escapeHtml(post.thumb) + '" alt="img"></a>' +
+                        '</div>' +
+                        '<div class="stories-post__content video__post-content">' +
+                        '<ul class="tgbanner__content-meta list-wrap">' +
+                        '<li class="category"><a href="' + escapeHtml(post.url) + '">' + escapeHtml(labelOrDefault(post.labels)) + '</a></li>' +
+                        '<li><span class="by">By</span> <a href="' + escapeHtml(post.url) + '">' + escapeHtml(post.author) + '</a></li>' +
+                        '<li>' + escapeHtml(post.date) + '</li>' +
+                        '</ul>' +
+                        '<h3 class="title tgcommon__hover"><a href="' + escapeHtml(post.url) + '">' + escapeHtml(post.title) + '</a></h3>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>';
+                }
+
+                function renderStoriesSmall(post) {
+                    return '' +
+                        '<div class="col-xl-3 col-lg-4 col-md-6">' +
+                        '<div class="trending__post stories-small-post__item">' +
+                        '<div class="trending__post-thumb tgImage__hover">' +
+                        '<a href="' + escapeHtml(post.url) + '"><img src="' + escapeHtml(post.thumb) + '" alt="img"></a>' +
+                        '</div>' +
+                        '<div class="trending__post-content">' +
+                        '<ul class="tgbanner__content-meta list-wrap">' +
+                        '<li class="category"><a href="' + escapeHtml(post.url) + '">' + escapeHtml(labelOrDefault(post.labels)) + '</a></li>' +
+                        '<li><span class="by">By</span> <a href="' + escapeHtml(post.url) + '">' + escapeHtml(post.author) + '</a></li>' +
+                        '</ul>' +
+                        '<h4 class="title tgcommon__hover"><a href="' + escapeHtml(post.url) + '">' + escapeHtml(post.title) + '</a></h4>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>';
+                }
+
+                function setHtml(id, html) {
+                    var el = document.getElementById(id);
+                    if (el) {
+                        el.innerHTML = html;
+                    }
+                }
+
+                function fetchAndRender() {
+                    fetch(feedUrl)
+                        .then(function (response) { return response.json(); })
+                        .then(function (data) {
+                            var entries = data && data.feed && data.feed.entry ? data.feed.entry : [];
+                            var posts = entries.map(mapEntry);
+                            if (!posts.length) {
+                                return;
+                            }
+
+                            var bannerMain = posts.slice(0, 1);
+                            var bannerSide = posts.slice(1, 3);
+                            var trending = posts.slice(3, 9);
+                            var featured = posts.slice(9, 15);
+                            var video = posts.slice(15, 20);
+                            var handpicked = posts.slice(20, 26);
+                            var storiesTop = posts.slice(26, 28);
+                            var storiesSmall = posts.slice(28, 32);
+
+                            if (bannerMain.length) {
+                                setHtml('tg-banner-main', renderBannerMain(bannerMain[0]));
+                            }
+                            setHtml('tg-banner-side', bannerSide.map(renderBannerSide).join(''));
+                            setHtml('tg-trending-wrapper', trending.map(renderTrending).join(''));
+                            setHtml('tg-featured-grid', featured.map(renderFeatured).join(''));
+                            if (video.length) {
+                                setHtml('tg-video-big', renderVideoBig(video[0]));
+                                setHtml('tg-video-side', video.slice(1).map(renderVideoSide).join(''));
+                            }
+                            setHtml('tg-handpicked-wrapper', handpicked.map(renderHandpicked).join(''));
+                            setHtml('tg-stories-top', storiesTop.map(renderStoriesTop).join(''));
+                            setHtml('tg-stories-small', storiesSmall.map(renderStoriesSmall).join(''));
+
+                            if (window.TG_INIT_SWIPERS) {
+                                window.TG_INIT_SWIPERS();
+                            }
+                        })
+                        .catch(function () {
+                            // Keep layout stable if feed fails.
+                        });
+                }
+
+                fetchAndRender();
+            })();
+        </script>
     </b:with>
 </body>
 </html>
