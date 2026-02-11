@@ -15,7 +15,7 @@ Theme Name: Sayudha Blogger Theme
 Description: Blogger conversion of the Sayudha HTML template.
 */
 ]]></b:skin>
-    <b:with var="assetBase" value="&quot;https://YOUR_BLOGGER_ASSET_BASE&quot;">
+    <b:with var="assetBase" value="&quot;https://new-sayudha-blog.pages.dev/assets&quot;">
         <link rel="shortcut icon" type="image/x-icon" expr:href="data:assetBase + &quot;/img/favicon.png&quot;" />
         <link rel="stylesheet" expr:href="data:assetBase + &quot;/css/bootstrap.min.css&quot;" />
         <link rel="stylesheet" expr:href="data:assetBase + &quot;/css/animate.min.css&quot;" />
@@ -30,7 +30,7 @@ Description: Blogger conversion of the Sayudha HTML template.
     </b:with>
 </head>
 <body>
-    <b:with var="assetBase" value="&quot;https://YOUR_BLOGGER_ASSET_BASE&quot;">
+    <b:with var="assetBase" value="&quot;https://new-sayudha-blog.pages.dev/assets&quot;">
         <div id="preloader">
             <div id="loading-center">
                 <div id="loading-center-absolute">
