@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:version="2"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:b="http://www.google.com/2005/gml/b"
+      xmlns:data="http://www.google.com/2005/gml/data"
+      xmlns:expr="http://www.google.com/2005/gml/expr">
+<head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <b:include data="blog" name="all-head-content" />
+    <b:skin><![CDATA[
+/*
+Theme Name: Sayudha Blogger Theme
+Description: Blogger conversion of the Sayudha HTML template.
+*/
+]]></b:skin>
+    <b:with var="assetBase" value="&quot;https://YOUR_BLOGGER_ASSET_BASE&quot;">
+        <link rel="shortcut icon" type="image/x-icon" expr:href="data:assetBase + &quot;/img/favicon.png&quot;" />
+        <link rel="stylesheet" expr:href="data:assetBase + &quot;/css/bootstrap.min.css&quot;" />
+        <link rel="stylesheet" expr:href="data:assetBase + &quot;/css/animate.min.css&quot;" />
+        <link rel="stylesheet" expr:href="data:assetBase + &quot;/css/magnific-popup.css&quot;" />
+        <link rel="stylesheet" expr:href="data:assetBase + &quot;/css/fontawesome-all.min.css&quot;" />
+        <link rel="stylesheet" expr:href="data:assetBase + &quot;/css/imageRevealHover.css&quot;" />
+        <link rel="stylesheet" expr:href="data:assetBase + &quot;/css/swiper-bundle.css&quot;" />
+        <link rel="stylesheet" expr:href="data:assetBase + &quot;/css/flaticon.css&quot;" />
+        <link rel="stylesheet" expr:href="data:assetBase + &quot;/css/slick.css&quot;" />
+        <link rel="stylesheet" expr:href="data:assetBase + &quot;/css/spacing.css&quot;" />
+        <link rel="stylesheet" expr:href="data:assetBase + &quot;/css/main.css&quot;" />
+    </b:with>
+</head>
+<body>
+    <b:with var="assetBase" value="&quot;https://YOUR_BLOGGER_ASSET_BASE&quot;">
+        <div id="preloader">
+            <div id="loading-center">
+                <div id="loading-center-absolute">
+                    <div class="object" id="object_one"></div>
+                    <div class="object" id="object_two"></div>
+                    <div class="object" id="object_three"></div>
+                </div>
+            </div>
+        </div>
+
+        <button class="scroll__top scroll-to-target" data-target="html">
+            <i class="fas fa-angle-up"></i>
+        </button>
+
+        <header>
+            <div class="header__top">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-4 col-md-6 col-sm-6 order-2 order-lg-0">
+                            <div class="header__top-search">
+                                <form expr:action="data:blog.searchUrl" method="get">
+                                    <input type="text" name="q" placeholder="Search here..." />
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-3 order-0 order-lg-2 d-none d-md-block">
+                            <div class="header__top-logo logo text-lg-center">
+                                <a expr:href="data:blog.homepageUrl" class="logo-dark"><img expr:src="data:assetBase + &quot;/img/logo/logo.png&quot;" alt="Logo" /></a>
+                                <a expr:href="data:blog.homepageUrl" class="logo-light"><img expr:src="data:assetBase + &quot;/img/logo/w_logo.png&quot;" alt="Logo" /></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-3 col-sm-6 order-3 d-none d-sm-block">
+                            <div class="header__top-right">
+                                <ul class="list-wrap">
+                                    <li class="news-btn"><a href="#newsletter" class="btn"><span class="btn-text">subscribe</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="header-fixed-height"></div>
+            <div id="sticky-header" class="tg-header__area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="tgmenu__wrap">
+                                <nav class="tgmenu__nav">
+                                    <div class="logo d-block d-md-none">
+                                        <a expr:href="data:blog.homepageUrl" class="logo-dark"><img expr:src="data:assetBase + &quot;/img/logo/logo.png&quot;" alt="Logo" /></a>
+                                        <a expr:href="data:blog.homepageUrl" class="logo-light"><img expr:src="data:assetBase + &quot;/img/logo/w_logo.png&quot;" alt="Logo" /></a>
+                                    </div>
+                                    <div class="offcanvas-toggle">
+                                        <a href="#"><i class="flaticon-menu-bar"></i></a>
+                                    </div>
+                                    <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-lg-flex">
+                                        <b:section id="main-menu" class="tgmenu__main-menu" maxwidgets="1" showaddelement="no">
+                                            <b:widget id="LinkList1" type="LinkList" title="Menu" locked="false">
+                                                <b:includable id="main">
+                                                    <ul class="navigation">
+                                                        <b:loop var="link" in="data:links">
+                                                            <li><a expr:href="data:link.target"><data:link.name /></a></li>
+                                                        </b:loop>
+                                                    </ul>
+                                                </b:includable>
+                                            </b:widget>
+                                        </b:section>
+                                    </div>
+                                    <div class="tgmenu__action">
+                                        <ul class="list-wrap">
+                                            <li class="mode-switcher">
+                                                <nav class="switcher__tab">
+                                                    <span class="switcher__btn light-mode"><i class="flaticon-sun"></i></span>
+                                                    <span class="switcher__mode"></span>
+                                                    <span class="switcher__btn dark-mode"><i class="flaticon-moon"></i></span>
+                                                </nav>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                                <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
+                            </div>
+                            <div class="tgmobile__menu">
+                                <nav class="tgmobile__menu-box">
+                                    <div class="close-btn"><i class="fas fa-times"></i></div>
+                                    <div class="nav-logo">
+                                        <a expr:href="data:blog.homepageUrl" class="logo-dark"><img expr:src="data:assetBase + &quot;/img/logo/logo.png&quot;" alt="Logo" /></a>
+                                        <a expr:href="data:blog.homepageUrl" class="logo-light"><img expr:src="data:assetBase + &quot;/img/logo/w_logo.png&quot;" alt="Logo" /></a>
+                                    </div>
+                                    <div class="tgmobile__search">
+                                        <form expr:action="data:blog.searchUrl" method="get">
+                                            <input type="text" name="q" placeholder="Search here..." />
+                                            <button type="submit"><i class="far fa-search"></i></button>
+                                        </form>
+                                    </div>
+                                    <div class="tgmobile__menu-outer"></div>
+                                    <div class="social-links">
+                                        <ul class="list-wrap">
+                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="tgmobile__menu-backdrop"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="offCanvas__wrap">
+                <div class="offCanvas__body">
+                    <div class="offCanvas__toggle"><i class="flaticon-addition"></i></div>
+                    <div class="offCanvas__content">
+                        <div class="offCanvas__logo logo">
+                            <a expr:href="data:blog.homepageUrl" class="logo-dark"><img expr:src="data:assetBase + &quot;/img/logo/logo.png&quot;" alt="Logo" /></a>
+                            <a expr:href="data:blog.homepageUrl" class="logo-light"><img expr:src="data:assetBase + &quot;/img/logo/w_logo.png&quot;" alt="Logo" /></a>
+                        </div>
+                        <p><data:blog.description /></p>
+                    </div>
+                    <div class="offCanvas__contact">
+                        <h4 class="title">Get In Touch</h4>
+                        <ul class="offCanvas__contact-list list-wrap">
+                            <li><i class="fas fa-envelope-open"></i><a expr:href="&quot;mailto:&quot; + data:blog.emailAddress"><data:blog.emailAddress /></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="offCanvas__overlay"></div>
+        </header>
+
+        <main>
+            <div class="breadcrumb-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="breadcrumb-content">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a expr:href="data:blog.homepageUrl">Home</a></li>
+                                        <b:if cond="data:blog.pageType == &quot;item&quot;">
+                                            <li class="breadcrumb-item active" aria-current="page"><data:blog.pageTitle /></li>
+                                        <b:else />
+                                            <li class="breadcrumb-item active" aria-current="page"><data:blog.pageTitle /></li>
+                                        </b:if>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="blog-details-area pt-80 pb-100">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-1">
+                            <div class="blog-details-social">
+                                <ul class="list-wrap">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                                    <li><a href="#"><i class="fas fa-share"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 col-lg-7">
+                            <div class="blog-post-wrapper">
+                                <b:section id="main" class="blog-post-wrapper" showaddelement="no" maxwidgets="1">
+                                    <b:widget id="Blog1" type="Blog" locked="true" title="Posts">
+                                        <b:includable id="main">
+                                            <b:if cond="data:blog.pageType == &quot;item&quot;">
+                                                <b:loop var="post" in="data:posts">
+                                                    <div class="blog-details-wrap">
+                                                        <ul class="tgbanner__content-meta list-wrap">
+                                                            <b:if cond="data:post.labels">
+                                                                <b:loop var="label" in="data:post.labels">
+                                                                    <li class="category"><a expr:href="data:label.url"><data:label.name /></a></li>
+                                                                </b:loop>
+                                                            </b:if>
+                                                            <li><span class="by">By</span> <a expr:href="data:post.authorProfileUrl"><data:post.author /></a></li>
+                                                            <li><data:post.date /></li>
+                                                            <li><data:post.numComments /> comments</li>
+                                                        </ul>
+                                                        <h2 class="title"><data:post.title /></h2>
+                                                        <div class="blog-details-thumb">
+                                                            <b:if cond="data:post.thumbnailUrl">
+                                                                <img expr:src="data:post.thumbnailUrl" alt="" />
+                                                            <b:else />
+                                                                <img expr:src="data:assetBase + &quot;/img/blog/blog01.jpg&quot;" alt="" />
+                                                            </b:if>
+                                                        </div>
+                                                        <div class="blog-details-content">
+                                                            <data:post.body />
+                                                        </div>
+                                                        <div class="blog-details-bottom">
+                                                            <div class="row align-items-baseline">
+                                                                <div class="col-xl-6 col-md-7">
+                                                                    <div class="blog-details-tags">
+                                                                        <ul class="list-wrap mb-0">
+                                                                            <b:if cond="data:post.labels">
+                                                                                <b:loop var="label" in="data:post.labels">
+                                                                                    <li><a expr:href="data:label.url"><data:label.name /></a></li>
+                                                                                </b:loop>
+                                                                            </b:if>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-xl-6 col-md-5">
+                                                                    <div class="blog-details-share">
+                                                                        <h6 class="share-title">Share Now:</h6>
+                                                                        <ul class="list-wrap mb-0">
+                                                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                                                            <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                                                                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <b:include data="post" name="comments" />
+                                                    </div>
+                                                </b:loop>
+                                            <b:else />
+                                                <b:loop var="post" in="data:posts">
+                                                    <div class="latest__post-item">
+                                                        <div class="latest__post-thumb tgImage__hover">
+                                                            <a expr:href="data:post.url">
+                                                                <b:if cond="data:post.thumbnailUrl">
+                                                                    <img expr:src="data:post.thumbnailUrl" alt="img" />
+                                                                <b:else />
+                                                                    <img expr:src="data:assetBase + &quot;/img/lifestyle/life_style01.jpg&quot;" alt="img" />
+                                                                </b:if>
+                                                            </a>
+                                                        </div>
+                                                        <div class="latest__post-content">
+                                                            <ul class="tgbanner__content-meta list-wrap">
+                                                                <b:if cond="data:post.labels">
+                                                                    <b:loop var="label" in="data:post.labels">
+                                                                        <li class="category"><a expr:href="data:label.url"><data:label.name /></a></li>
+                                                                    </b:loop>
+                                                                </b:if>
+                                                                <li><span class="by">By</span> <a expr:href="data:post.authorProfileUrl"><data:post.author /></a></li>
+                                                                <li><data:post.date /></li>
+                                                            </ul>
+                                                            <h3 class="title tgcommon__hover"><a expr:href="data:post.url"><data:post.title /></a></h3>
+                                                            <p><data:post.snippet /></p>
+                                                            <div class="latest__post-read-more">
+                                                                <a expr:href="data:post.url">Read More <i class="far fa-long-arrow-right"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </b:loop>
+                                                <div class="pagination__wrap">
+                                                    <ul class="list-wrap">
+                                                        <b:if cond="data:newerPageUrl">
+                                                            <li><a expr:href="data:newerPageUrl"><i class="fas fa-angle-double-left"></i></a></li>
+                                                        </b:if>
+                                                        <b:if cond="data:olderPageUrl">
+                                                            <li><a expr:href="data:olderPageUrl"><i class="fas fa-angle-double-right"></i></a></li>
+                                                        </b:if>
+                                                    </ul>
+                                                </div>
+                                            </b:if>
+                                        </b:includable>
+                                    </b:widget>
+                                </b:section>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <aside class="blog-sidebar">
+                                <b:section id="sidebar" class="blog-sidebar" showaddelement="yes" />
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="newsletter" class="newsletter-area pb-80">
+                <div class="container">
+                    <div class="newsletter__wrap">
+                        <div class="row align-items-center">
+                            <div class="col-xl-5 col-lg-6">
+                                <div class="newsletter__title">
+                                    <span class="sub-title">newsletter</span>
+                                    <h4 class="title">Get updates right in your inbox</h4>
+                                </div>
+                            </div>
+                            <div class="col-xl-7 col-lg-6">
+                                <div class="newsletter__form-wrap">
+                                    <b:section id="newsletter-form" class="newsletter__form" maxwidgets="1" showaddelement="no">
+                                        <b:widget id="ContactForm1" type="ContactForm" locked="false" title="Contact" />
+                                    </b:section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer-area black-bg">
+            <div class="container">
+                <div class="footer__top-wrap">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                            <b:section id="footer-col-1" class="footer__widget" maxwidgets="1" showaddelement="yes" />
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                            <b:section id="footer-col-2" class="footer__widget" maxwidgets="1" showaddelement="yes" />
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                            <b:section id="footer-col-3" class="footer__widget" maxwidgets="1" showaddelement="yes" />
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                            <b:section id="footer-col-4" class="footer__widget" maxwidgets="1" showaddelement="yes" />
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__logo-wrap">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 col-md-4">
+                            <div class="footer__logo logo">
+                                <a expr:href="data:blog.homepageUrl"><img expr:src="data:assetBase + &quot;/img/logo/w_logo.png&quot;" alt="Logo" /></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-9 col-md-8">
+                            <div class="footer__social">
+                                <b:section id="footer-social" class="footer__social" maxwidgets="1" showaddelement="yes" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__copyright">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="copyright__text">
+                                <p>Copyright &amp; Design By <span>@Theme_Genix</span> - 2022</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="copyright__menu">
+                                <b:section id="footer-menu" class="copyright__menu" maxwidgets="1" showaddelement="yes" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script expr:src="data:assetBase + &quot;/js/vendor/jquery-3.6.0.min.js&quot;"></script>
+        <script expr:src="data:assetBase + &quot;/js/bootstrap.min.js&quot;"></script>
+        <script expr:src="data:assetBase + &quot;/js/isotope.pkgd.min.js&quot;"></script>
+        <script expr:src="data:assetBase + &quot;/js/imagesloaded.pkgd.min.js&quot;"></script>
+        <script expr:src="data:assetBase + &quot;/js/jquery.magnific-popup.min.js&quot;"></script>
+        <script expr:src="data:assetBase + &quot;/js/jquery.marquee.min.js&quot;"></script>
+        <script expr:src="data:assetBase + &quot;/js/imageRevealHover.js&quot;"></script>
+        <script expr:src="data:assetBase + &quot;/js/swiper-bundle.js&quot;"></script>
+        <script expr:src="data:assetBase + &quot;/js/TweenMax.min.js&quot;"></script>
+        <script expr:src="data:assetBase + &quot;/js/slick.min.js&quot;"></script>
+        <script expr:src="data:assetBase + &quot;/js/wow.min.js&quot;"></script>
+        <script expr:src="data:assetBase + &quot;/js/main.js&quot;"></script>
+    </b:with>
+</body>
+</html>
